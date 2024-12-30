@@ -14,7 +14,7 @@ public final class CoordinatesPlugin extends JavaPlugin {
             ToggleCommand toggleCommand = new ToggleCommand();
             CoordinatesHUD coordinatesHUD = new CoordinatesHUD(toggleCommand);
             getCommand("displayCoordinate").setExecutor(toggleCommand);
-            coordinatesHUD.runTaskTimerAsynchronously(this, 0L, 1L);
+            coordinatesHUD.runTaskTimer(this, 0L, 1L);
             getServer().getPluginManager().registerEvents(new ActionBarEvent(toggleCommand, this), this);
         } catch (Exception e) {
             getLogger().warning(e.getMessage());
